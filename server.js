@@ -7,6 +7,8 @@ const port = 5000
 
 const mongoDBURL = 'mongodb+srv://Gaston:<password>@clusterdb-1esq3.mongodb.net/escribania'
 
+mongoose.connect(mongoDBURL, {useNewUrlParser: true})
+
 app.use('/', router)
 
 app.listen(port, () =>{

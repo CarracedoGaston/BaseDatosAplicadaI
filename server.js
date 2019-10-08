@@ -5,6 +5,8 @@ const router = require('./router')
 const app = express()
 const port = 5000
 
+const mongoDBURL = 'mongodb+srv://Gaston:<password>@clusterdb-1esq3.mongodb.net/escribania'
+
 app.use('/', router)
 
 app.listen(port, () =>{

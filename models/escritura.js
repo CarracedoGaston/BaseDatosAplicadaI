@@ -5,7 +5,7 @@ const UserSchema = new Schema({
   id: Schema.Types.ObjectId,
   tipo: { type: String, required: true, max: 30},
   descripcion: { type: String, required: true, max: 200},
-  fecha: { type: Date, required: true},
+  fecha: { type: String, required: true},
   escribano: { type: Schema.Types.ObjectId, ref: 'Escribano'},
   cliente: { type: Schema.Types.ObjectId, ref: 'Cliente'}
 })

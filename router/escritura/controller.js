@@ -1,50 +1,52 @@
-const Localidad = require('../../models/localidad')
+const Escritura = require('../../models/escritura')
 
 const getAll = (req, res) => {
-  Localidad.find({}, (err, clientes) => {
-    if (err) res.send({msg: 'Cant`t get the localidad list', error: err})
-    res.send(clientes)
+  Escritura.find({}, (err, escrituras) => {
+    if (err) res.send({msg: 'Cant`t get the Escritura list', error: err})
+    res.send(escrituras)
   })
 }
 
 const getById = (req, res) => {
-  Localidad.findById(req.params.id, (err, cliente) => {
-    if (err) res.send({msg: `Cant't get the localidad ${req.params.id}`, error: err})
-    res.send(cliente)
+  Escritura.findById(req.params.id, (err, escrituras) => {
+    if (err) res.send({msg: `Cant't get the Escritura ${req.params.id}`, error: err})
+    res.send(escrituras)
   }) 
 }
 
 const insert = (req, res) => {
-  const localidad = new Localidad({
-    id: req.body.id,
-    codigo: req.body.codigo,
-    name: req.body.name
+  const escritura = new Escritura({
+    tipo: req.body.tipo,
+    descripcion: req.body.descripcion,
+    fecha: req.body.fecha,
+    escribano: req.body.escribano,
+    cliente: req.body.cliente
   })
 
-  localidad.save((err) => {
-    if (err) res.send({msg: 'Cant`t save the localidad', error: err})
-    res.send('localidad saved')
+  escritura.save((err) => {
+    if (err) res.send({msg: 'Cant`t save the Escritura', error: err})
+    res.send('Escritura saved')
   })
 }
 
 const upsert  = (req, res) => {
-  Localidad.updateOne({_id: req.params.id}, {...req.body}, (err) => {
-    if (err) res.send({msg: `Cant't upsert the localidad ${req.params.id}`, error: err})
-    res.send('localidad upserted')
+  Escritura.updateOne({_id: req.params.id}, {...req.body}, (err) => {
+    if (err) res.send({msg: `Cant't upsert the Escritura ${req.params.id}`, error: err})
+    res.send('Escritura upserted')
   })
 }
 
 const update  = (req, res) => {
-  Localidad.updateOne({_id: req.params.id}, {[Object.keys(req.body)]: req.body[Object.keys(req.body)]}, (err) => {
-    if (err) res.send({msg: `Cant't update the localidad ${req.params.id}`, error: err})
-    res.send('localidad updated')
+  Escritura.updateOne({_id: req.params.id}, {[Object.keys(req.body)]: req.body[Object.keys(req.body)]}, (err) => {
+    if (err) res.send({msg: `Cant't update the Escritura ${req.params.id}`, error: err})
+    res.send('Escritura updated')
   })
 }
 
 const remove = (req, res) => {
-  Localidad.deleteOne({_id: req.params.id}, (err) => {
-    if (err) res.send({msg: `Cant't delete the localidad ${req.params.id}`, error: err})
-    res.send('localidad deleted')
+  Escritura.deleteOne({_id: req.params.id}, (err) => {
+    if (err) res.send({msg: `Cant't delete the Escritura ${req.params.id}`, error: err})
+    res.send('Escritura deleted')
   }) 
 }
 

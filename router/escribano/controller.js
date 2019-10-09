@@ -16,7 +16,6 @@ const getById = (req, res) => {
 
 const insert = (req, res) => {
   const escribano = new Escribano({
-    id: req.body.id,
     name: req.body.name,
     lastName: req.body.lastName,
     dni: req.body.dni

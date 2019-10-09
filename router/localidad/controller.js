@@ -16,7 +16,6 @@ const getById = (req, res) => {
 
 const insert = (req, res) => {
   const localidad = new Localidad({
-    id: req.body.id,
     codigo: req.body.codigo,
     name: req.body.name
   })

@@ -1,9 +1,9 @@
 const Localidad = require('../../models/localidad')
 
 const getAll = (req, res) => {
-  Localidad.find({}, (err, localidades) => {
+  Localidad.find({}, (err, clientes) => {
     if (err) res.send({msg: 'Cant`t get the localidad list', error: err})
-    res.send(localidades)
+    res.send(clientes)
   })
 }
 

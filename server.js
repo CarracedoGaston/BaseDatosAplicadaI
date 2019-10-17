@@ -18,7 +18,7 @@ let allowCrossDomain = function(req, res, next) {
 
 app.use(allowCrossDomain)
 
-app.use(express.static('public'))
+app.use(express.static('public/build'))
 
 app.use('/', router)
 

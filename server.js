@@ -20,7 +20,7 @@ app.use(allowCrossDomain)
 
 app.use(express.static('public/build'))
 
-app.use('/', router)
+app.use('/api', router)
 
 app.listen(port, () =>{
     console.log(`App listening on port ${port}!`)

@@ -18,13 +18,6 @@ let allowCrossDomain = function(req, res, next) {
 
 app.use(allowCrossDomain)
 
-// if( process.env.NODE_ENV === 'production') {
-//     app.use(express.static('public'))
-//     app.get('*', (req, res) => {
-//         res.sendFile(path.resolve(__dirname, "index.html"))
-//     })
-// }
-
 app.use(express.static('public'))
 app.get('*')
 

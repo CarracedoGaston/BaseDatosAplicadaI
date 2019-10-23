@@ -21,7 +21,6 @@ app.use(allowCrossDomain)
 app.use(express.static('public'))
 app.get('*')
 
-
 app.use('/api', router)
 
 app.listen(port, () =>{
